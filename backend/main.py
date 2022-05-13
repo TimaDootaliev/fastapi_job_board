@@ -1,11 +1,9 @@
+from apis.base import api_router
+from core.config import settings
+from db.base import Base
+from db.session import engine
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from core.config import settings
-from apis.base import api_router
-from apis.general_pages.route_homepage import general_pages_router
-from db.session import engine
-from db.base import Base
-
 
 
 def include_router(app):
@@ -26,7 +24,6 @@ def start_application():
     configure_static(app)
     create_tables()
     return app
-
 
 
 app = start_application()
