@@ -1,5 +1,6 @@
 from db.repository.jobs import create_new_job
 from db.repository.jobs import retrieve_job
+from db.repository.jobs import list_jobs
 from db.session import get_db
 from fastapi import APIRouter
 from fastapi import Depends
@@ -8,7 +9,7 @@ from fastapi import status
 from schemas.jobs import JobCreate
 from schemas.jobs import ShowJob
 from sqlalchemy.orm import Session
-
+from typing import List
 
 router = APIRouter()
 
@@ -26,3 +27,9 @@ def read_job(id: int, db: Session = Depends(get_db)):
     if not job:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Job with id {id} not found")
     return job
+
+
+@router.get('/all', response_model=List[ShowJob])
+def read_jobs(db: Session = Depends(get_db)):
+    jobs = list_jobs(db=db)
+    return jobs
