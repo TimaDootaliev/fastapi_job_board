@@ -3,6 +3,7 @@ from typing import List
 from db.repository.jobs import create_new_job
 from db.repository.jobs import list_jobs
 from db.repository.jobs import retrieve_job
+from db.repository.jobs import update_job_by_id
 from db.session import get_db
 from fastapi import APIRouter
 from fastapi import Depends
