@@ -37,4 +37,4 @@ def delete_job_by_id(id: int, db: Session, owner_id):
         return 0
     existing_job.delete(synchronize_session=False)
     db.commit()
-    return 1 
+    return 1
