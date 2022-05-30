@@ -20,5 +20,3 @@ def create_new_user(user: UserCreate, db: Session):
 def get_user_by_email(email: str, db: Session):
     user = db.query(User).filter(User.email == email).first()
     return user
-
-

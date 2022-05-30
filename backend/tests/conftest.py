@@ -7,7 +7,8 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -71,7 +72,6 @@ def client(app: FastAPI, db_session: SessionTesting) -> Generator[TestClient, An
     app.dependency_overrides[get_db] = _get_test_db
     with TestClient(app) as client:
         yield client
-
 
 
 @pytest.fixture(scope="function")

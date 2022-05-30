@@ -25,4 +25,3 @@ def authentication_token_from_email(client: TestClient, email: str, db: Session)
         user_in_create = UserCreate(username=email, email=email, password=password)
         user = create_new_user(user=user_in_create, db=db)
     return user_authentication_headers(client=client, email=email, password=password)
-
