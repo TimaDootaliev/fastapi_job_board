@@ -1,5 +1,5 @@
-from backend.apis.version1.route_login import get_current_user_from_token
-from backend.db.models.users import User
+from apis.version1.route_login import get_current_user_from_token
+from  db.models.users import User
 from db.repository.jobs import create_new_job, list_jobs, retrieve_job
 from db.session import get_db
 from fastapi import APIRouter, Depends, Request, responses, status
@@ -53,3 +53,11 @@ async def create_job(request: Request, db: Session = Depends(get_db)):
             )
             return templates.TemplateResponse('jobs/create_job.html', form.__dict__)
     return templates.TemplateResponse('jobs/create_job.html', form.__dict__)
+
+
+@router.get('/delete-job/')
+def show_jobs_to_delete(request: Request, db: Session = Depends(get_db)):
+    jobs = list_jobs(db=db)
+    return templates.TemplateResponse(
+        'jobs/show_jobs_to_delete.html', {'request': request, 'jobs': jobs}
+    )
