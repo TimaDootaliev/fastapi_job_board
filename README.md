@@ -1,6 +1,5 @@
 # To set this project up:
 
-```
 
 1. git clone git@github.com:TimaDootaliev/jobs_fastapi_t.git
 
@@ -16,5 +15,3 @@
 7. cd backends/
 
 8. uvicorn main:app <some_options(--reload)>
-
-```
