@@ -16,12 +16,12 @@ class JobCreateForm:
 
     async def load_data(self):
         form = await self.request.form()
-        self.title = form.get('title')
-        self.company = form.get('company')
-        self.company_url = form.get('company_url')
-        self.location = form.get('location')
-        self.description = form.get('description')
-    
+        self.title = form.get("title")
+        self.company = form.get("company")
+        self.company_url = form.get("company_url")
+        self.location = form.get("location")
+        self.description = form.get("description")
+
     def is_valid(self):
         if not self.title or not len(self.title) >= 4:
             self.errors.append("A valid title is required")

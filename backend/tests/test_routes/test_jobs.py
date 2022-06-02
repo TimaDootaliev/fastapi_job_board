@@ -73,7 +73,9 @@ def test_update_a_job(client, normal_user_token_headers):
         "/jobs/create-job/", json.dumps(data), headers=normal_user_token_headers
     )
     data["title"] = "test new title"
-    response = client.put("/jobs/update/1", json.dumps(data), headers=normal_user_token_headers)
+    response = client.put(
+        "/jobs/update/1", json.dumps(data), headers=normal_user_token_headers
+    )
     assert response.json()["msg"] == "Successfully updated"
 
 

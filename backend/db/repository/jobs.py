@@ -42,7 +42,7 @@ def delete_job_by_id(id: int, db: Session, owner_id):
 
 def search_job(query: str, db: Session):
     try:
-        jobs = db.query(Job).filter(Job.title.ilike('%'+query+'%'))
+        jobs = db.query(Job).filter(Job.title.ilike("%" + query + "%"))
     except TypeError:
         jobs = db.query(Job).all()
     return jobs
