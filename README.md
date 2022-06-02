@@ -1,4 +1,4 @@
-# To set this project up:
+# To run project:
 
 
 1. git clone git@github.com:TimaDootaliev/jobs_fastapi_t.git
@@ -17,3 +17,12 @@
 
 
 8. uvicorn main:app <some_options(--reload)>
+
+
+# To run pre-commit hooks:
+
+1. pre-commit run --all-files
+
+### If you don't want to run pre-commit hooks every time you commit, you can make commits with `--no-verify` option:
+
+`git commit --no-verify`
