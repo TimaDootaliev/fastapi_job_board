@@ -2,19 +2,19 @@
 
 ```
 
-git clone git@github.com:TimaDootaliev/jobs_fastapi_t.git
+1. git clone git@github.com:TimaDootaliev/jobs_fastapi_t.git
 
-cd jobs_fastapi_t
+2. cd jobs_fastapi_t
 
-python3 -m venv <virtual_environment_name>
+3. python3 -m venv <virtual_environment_name>
 
-. venv/bin/activate - linux
-. venv/Scripts/activate - Windows
+4. . venv/bin/activate - linux
+5. . venv/Scripts/activate - Windows
 
-pip install -r requirements.txt
+6. pip install -r requirements.txt
 
-cd backends/
+7. cd backends/
 
-uvicorn main:app <some_options(--reload)>
+8. uvicorn main:app <some_options(--reload)>
 
 ```
