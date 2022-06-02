@@ -24,3 +24,6 @@ class LoginForm:
         if not self.errors:
             return True
         return False
+
+
+
