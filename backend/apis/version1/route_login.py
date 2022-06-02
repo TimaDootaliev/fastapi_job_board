@@ -1,5 +1,6 @@
 from datetime import timedelta
 
+from apis.utils import OAuth2PasswordBearerWithCookie
 from core.config import settings
 from core.hashing import Hasher
 from core.security import create_access_token
@@ -8,15 +9,14 @@ from db.session import get_db
 from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import HTTPException
-from fastapi import status
-# from fastapi.security import OAuth2PasswordBearer
-from apis.utils import OAuth2PasswordBearerWithCookie
 from fastapi import Response
+from fastapi import status
 from fastapi.security import OAuth2PasswordRequestForm
 from jose import jwt
 from jose import JWTError
 from schemas.token import Token
 from sqlalchemy.orm import Session
+# from fastapi.security import OAuth2PasswordBearer
 
 
 router = APIRouter()

@@ -7,8 +7,8 @@ from fastapi import responses
 from fastapi import status
 from fastapi.templating import Jinja2Templates
 from schemas.users import UserCreate
-from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import Session
 from webapps.users.forms import UserCreateForm
 
 
@@ -38,4 +38,3 @@ async def register(request: Request, db: Session = Depends(get_db)):
             form.__dict__.get('errors').append('Duplicate username or email')
             return templates.TemplateResponse('users/register.html', form.__dict__)
     return templates.TemplatesResponse('users/register.html', form.__dict__)
-    
