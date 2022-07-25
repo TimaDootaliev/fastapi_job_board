@@ -11,7 +11,7 @@
 
 5. `.env.template >> .env` and fill the file with your credentials
 
-6. pip install -r requirements.txt
+6. `pip install -r backends/requirements-dev.txt`
 
 7. cd backends/
 
