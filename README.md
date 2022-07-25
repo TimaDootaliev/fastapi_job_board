@@ -9,7 +9,7 @@
 
 4. . venv/bin/activate - linux
 
-5. rename `.env.template` to `.env` fill the file with your credentials
+5. `.env.template >> .env` and fill the file with your credentials
 
 6. pip install -r requirements.txt
 
